@@ -7,9 +7,9 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "repository": "git@github.com:alylim/testing-component-library.git",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "bare minimum code for shared components",
-  "main": "dist/index.js",
+  "main": "dist/bundle.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "webpack --mode production",

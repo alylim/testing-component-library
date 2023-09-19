@@ -51,3 +51,27 @@ npm install --save-dev webpack webpack-cli ts-loader
 ```js
 
 ```
+
+9. publishing to github npm packages:
+
+   1. generate a PAT
+   2. create your repo in gh
+   3. add publish-config to package.json
+   4. add a .npmrc file with the following, replace TOKEN with the PAT generated in step 1:
+
+   ```
+   //npm.pkg.github.com/:_authToken=TOKEN
+   ```
+
+   5. Run `npm publish`, and you should see it in your github packages.
+
+10. Installing the library:
+
+    1. In your project, add a .npmrc file in the same level as your package.json file
+
+    ```
+    @NAMESPACE:registry=https://npm.pkg.github.com
+    //npm.pkg.github.com/:_authToken=TOKEN
+    ```
+
+    2. Install the package as per command in github packages!

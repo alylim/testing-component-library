@@ -21,7 +21,10 @@ export const Button = ({ children, onClick, shape }: ButtonProps) => {
   };
   return (
     <button onClick={onClick} style={getStyle()}>
-      {children}
+      <div style={{ position: "relative" }}>
+        {shape === "cat" && <CatFeatures />}
+        {children}
+      </div>
     </button>
   );
 };
@@ -34,24 +37,26 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: "5%",
   },
   cat: {
+    marginTop: "20px",
     width: "100px",
-    height: "100px",
-    backgroundColor: "gray",
+    height: "80px",
+    backgroundColor: "grey",
     borderRadius: "50%",
     position: "relative",
   },
   ear: {
-    width: "20px",
-    height: "30px",
-    backgroundColor: "gray",
-    borderRadius: "50%",
+    width: "0px",
+    height: "0px",
+    borderLeft: "15px solid transparent",
+    borderRight: "15px solid transparent",
+    borderBottom: "30px solid grey",
     position: "absolute",
   },
 };
 
-const catFeatures = () => (
+const CatFeatures = () => (
   <>
-    <div style={{ ...styles.ear, left: "0", top: "0" }}></div>
-    <div style={{ ...styles.ear, right: "0", top: "0" }}></div>
+    <div style={{ ...styles.ear, left: "3px", top: "-43px" }}></div>
+    <div style={{ ...styles.ear, right: "3px", top: "-43px" }}></div>
   </>
 );
